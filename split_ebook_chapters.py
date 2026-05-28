@@ -2,7 +2,7 @@
 上博楚簡電子書章節分割與歸檔工具
 ====================================
 功能：從 PDF 電子書中按書籤（大綱）分割章節，輸出命名規範的析出 PDF，
-      並可歸檔至「依篇目分類」目錄及「書籍」目錄。
+      分割後文件直接留在來源目錄，並可歸檔至「依篇目分類」目錄。
 
 命名規則（析出文獻格式）：
   - 同作者：作者：《篇名》，《書名》.pdf
@@ -50,7 +50,6 @@ BOOKS = [
 OUTPUT_DIR = r"C:\Users\d8911\Desktop\上博楚簡_分割章節"
 
 # 歸檔目錄（可選）
-ARCHIVE_BOOK_DIR = r"C:\Users\d8911\WPSDrive\646045039\WPS云盘\電子書（gp22）\6.出土文獻\思想學術\書籍"
 ARCHIVE_CHAPTER_DIR = r"C:\Users\d8911\WPSDrive\646045039\WPS云盘\研究\1.主題研究\上博楚簡禮記類文獻思想研究\參考文獻\依篇目分類"
 
 
@@ -108,13 +107,6 @@ def split_book(book: dict, output_dir: str) -> list:
         results.append(out_path)
 
     return results
-
-
-def archive_to_book_folders(output_dir: str, archive_dir: str):
-    """將分割章節和全書 PDF 複製到以「作者：書名」命名的資料夾"""
-    # 此處僅為範例框架，實際使用時依 BOOKS 配置擴展
-    print(f"\n歸檔至書籍目錄：{archive_dir}")
-    # ... 實現略，參見完整腳本
 
 
 def archive_to_chapter_folders(output_dir: str, archive_dir: str):
